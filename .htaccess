@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files and folders normally
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything else to index.html
+RewriteRule ^ index.html [L]

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>YammTech | Custom Software Development & Digital Marketing Agency</title>
+<meta name="description" content="YammTech is a premier software development and digital marketing agency. We build custom web apps, mobile apps, and run SEO, Google Ads & Meta Ads campaigns that drive real growth."/>
+<meta name="keywords" content="software development agency, digital marketing agency, custom web app development, SEO agency, Google Ads management, Meta Ads agency, enterprise IT solutions, mobile app development"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="YammTech"/>
+<link rel="canonical" href="https://www.yammtech.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.yammtech.com/"/>
+<meta property="og:title" content="YammTech | Custom Software & Digital Marketing Agency"/>
+<meta property="og:description" content="Build, market, and grow with YammTech — your full-stack technology and marketing partner trusted by government agencies and businesses alike."/>
+<meta property="og:image" content="https://www.yammtech.com/og-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="YammTech | Software & Digital Marketing Agency"/>
+<meta name="twitter:description" content="Custom software, enterprise IT, and full-service digital marketing. A trusted tech agency delivering real results."/>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"YammTech",
+  "url":"https://www.yammtech.com",
+  "description":"Custom software development and digital marketing agency trusted by government agencies and businesses.",
+  "serviceArea":{"@type":"Country","name":"United States"},
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"YammTech Services",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Software Development"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing & SEO"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Enterprise IT Architecture"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Managed IT Services"}}
+    ]
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --yellow:#FFD23F;
+  --navy:#0d1b40;
+  --navy2:#162255;
+  --coral:#FF5A5F;
+  --white:#fffdf4;
+  --cream:#f5f2e4;
+  --muted:#5a6a9a;
+  --border:rgba(13,27,64,0.1);
+  --radius:16px;
+  --font-head:'Poppins',sans-serif;
+  --font-body:'Poppins',sans-serif;
+  --font-mono:'Poppins',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--navy);font-family:var(--font-body);line-height:1.65;overflow-x:hidden}
+
+/* ── TOP BANNER ── */
+.top-banner{background:var(--navy);color:var(--yellow);text-align:center;padding:0.55rem 1rem;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:0.8rem;position:relative;z-index:1001}
+.banner-dot{width:5px;height:5px;border-radius:50%;background:var(--coral);display:inline-block;animation:blink 1.4s infinite}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;width:100%;z-index:1000;background:rgba(255,253,244,0.95);backdrop-filter:blur(20px);border-bottom:2px solid var(--yellow)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:66px;max-width:1280px;margin:0 auto}
+.logo{text-decoration:none;display:flex;align-items:center;flex-shrink:0}
+.logo-img{height:46px;width:auto;display:block;object-fit:contain}
+.logo-img-footer{height:42px;filter:brightness(1.15)}
+.nav-links{display:flex;align-items:center;gap:0.2rem;list-style:none}
+.nav-links a{color:var(--navy);text-decoration:none;font-size:0.85rem;font-weight:500;padding:0.5rem 0.9rem;border-radius:100px;transition:all 0.2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--coral);background:rgba(255,90,95,0.07)}
+.nav-cta{background:var(--coral)!important;color:#fff!important;font-weight:600!important}
+.nav-cta:hover{background:var(--navy)!important;color:var(--yellow)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:1100}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;display:block}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:1050;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;transition:opacity 0.3s}
+.mobile-menu.open{display:flex;opacity:1}
+.mobile-menu a{font-family:var(--font-head);font-size:2rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s}
+.mobile-menu a:hover{color:var(--yellow)}
+.mobile-menu .m-cta{background:var(--yellow);color:var(--navy)!important;padding:0.9rem 2.5rem;border-radius:100px;font-size:1.2rem!important}
+.mob-close{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;cursor:pointer;transition:background 0.2s;z-index:1060}
+.mob-close:hover{background:rgba(255,255,255,0.2)}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* ── HERO ── */
+.hero{background:var(--navy);min-height:88vh;display:flex;align-items:center;padding:6rem 2rem;position:relative;overflow:hidden}
+.hero-container{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center}
+.deco{position:absolute;pointer-events:none;z-index:0;border-radius:50%}
+.deco1{width:420px;height:420px;border:1.5px solid rgba(255,210,63,0.1);top:-80px;right:-80px}
+.deco2{width:260px;height:260px;border:1.5px solid rgba(255,90,95,0.1);bottom:-40px;left:-40px}
+.deco3{width:150px;height:150px;background:rgba(255,210,63,0.05);top:35%;right:15%}
+.hero-content{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-family:var(--font-mono);font-size:0.7rem;color:var(--yellow);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;background:rgba(255,210,63,0.1);border:1px solid rgba(255,210,63,0.25);padding:0.4rem 1rem;border-radius:100px;width:fit-content}
+.blink-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);animation:blink 1.2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(3rem,5.5vw,6rem);line-height:0.95;letter-spacing:-0.02em;color:#fff;margin-bottom:1.5rem}
+.hero h1 .yellow{color:var(--yellow)}
+.hero h1 .stroke{-webkit-text-stroke:2px rgba(255,255,255,0.2);color:transparent}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2.5rem;max-width:520px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-yellow{background:var(--yellow);color:var(--navy);padding:0.9rem 2rem;border-radius:100px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:transform 0.25s,box-shadow 0.25s;box-shadow:0 4px 20px rgba(255,210,63,0.3);display:inline-block;border:none;cursor:pointer;font-family:var(--font-body)}
+.btn-yellow:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(255,210,63,0.45)}
+.btn-outline-w{background:transparent;color:#fff;padding:0.9rem 2rem;border-radius:100px;border:1.5px solid rgba(255,255,255,0.2);font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-outline-w:hover{border-color:var(--yellow);color:var(--yellow)}
+.hero-stats{display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1}
+.hstat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all 0.3s}
+.hstat:hover{background:rgba(255,210,63,0.08);border-color:rgba(255,210,63,0.3)}
+.hstat-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.hstat-icon.y{background:rgba(255,210,63,0.15)}
+.hstat-icon.y i{color:var(--yellow)}
+.hstat-icon.c{background:rgba(255,90,95,0.15)}
+.hstat-icon.c i{color:var(--coral)}
+.hstat-icon.w{background:rgba(255,255,255,0.08)}
+.hstat-icon.w i{color:rgba(255,255,255,0.7)}
+.hstat-num{font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:#fff;line-height:1}
+.hstat-label{font-size:0.7rem;color:rgba(255,255,255,0.4);margin-top:2px}
+
+/* ── MARQUEE ── */
+.marquee-wrap{background:var(--yellow);padding:0.7rem 0;overflow:hidden}
+.marquee-track{display:flex;gap:2.5rem;animation:marquee 22s linear infinite;width:max-content}
+.marquee-item{font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:var(--navy);letter-spacing:0.06em;white-space:nowrap;display:flex;align-items:center;gap:2rem}
+.marquee-item::after{content:'✦';opacity:0.3;font-size:0.65rem}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION COMMONS ── */
+.section-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--coral);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.8rem;background:rgba(255,90,95,0.07);padding:0.3rem 0.8rem;border-radius:100px;border:1px solid rgba(255,90,95,0.18)}
+h2.big{font-family:var(--font-head);font-weight:800;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;letter-spacing:-0.02em;margin-bottom:0.8rem;color:var(--navy)}
+h2.big span{color:var(--coral)}
+.section-desc{color:var(--muted);max-width:520px;font-size:0.95rem;line-height:1.8;margin-bottom:3rem}
+
+/* ── SERVICES INTRO (full-height) ── */
+.services-intro{min-height:90vh;display:flex;align-items:center;background:var(--white);padding:6rem 2rem}
+.services-intro-inner{max-width:1200px;margin:0 auto;width:100%}
+.services-intro .section-desc{margin-bottom:0}
+
+/* ── SERVICE TABS SECTION ── */
+.service-tabs-section{padding:8rem 2rem;background:var(--white)}
+.pillars{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.pillar-tab{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.04em;text-transform:uppercase;padding:0.5rem 1.1rem;border-radius:100px;border:1.5px solid var(--border);color:var(--muted);cursor:pointer;background:#fff;transition:all 0.25s;font-weight:500;display:inline-flex;align-items:center;gap:0.45rem}
+.pillar-tab i{font-size:0.75rem}
+.pillar-tab.active,.pillar-tab:hover{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
+.pillar-content{display:none}
+.pillar-content.active{display:grid;grid-template-columns:1fr 1.3fr;gap:3.5rem;align-items:start;padding-top:2.5rem}
+.pillar-intro h3{font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.8rem;color:var(--navy)}
+.pillar-intro h3 span{color:var(--coral)}
+.pillar-intro p{color:var(--muted);font-size:0.92rem;line-height:1.8;margin-bottom:1.8rem}
+.sub-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+.sub-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.4rem;transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.sub-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 10px 28px rgba(255,90,95,0.1)}
+.sc-icon{font-size:1.3rem;margin-bottom:0.6rem;display:block;color:var(--coral)}
+.sc-title{font-family:var(--font-head);font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;color:var(--navy)}
+.sc-desc{font-size:0.76rem;color:var(--muted);line-height:1.6}
+
+/* ── STATS ── */
+.stats-strip{background:var(--navy2);display:grid;grid-template-columns:repeat(3,1fr)}
+.sstat{padding:3.5rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,0.06);transition:background 0.3s}
+.sstat:last-child{border-right:none}
+.sstat:hover{background:rgba(255,210,63,0.07)}
+.sstat-n{font-family:var(--font-head);font-size:3.2rem;font-weight:800;color:var(--yellow);line-height:1;display:block}
+.sstat-l{font-family:var(--font-mono);font-size:0.65rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem;display:block}
+
+/* ── TRUSTED ── */
+.trusted{padding:5rem 2rem;background:var(--cream);text-align:center}
+.trusted-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;display:block}
+.trusted-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem 3rem}
+.tlogo{font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:rgba(13,27,64,0.22);letter-spacing:0.04em;text-transform:uppercase;transition:color 0.3s}
+.tlogo:hover{color:var(--coral)}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--navy);padding:9rem 2rem 5.5rem;position:relative;overflow:hidden}
+.page-hero .deco{position:absolute}
+.page-hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-0.02em;line-height:0.95;color:#fff;margin-bottom:1.2rem}
+.page-hero h1 span{color:var(--yellow)}
+.page-hero p{max-width:560px;color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.8}
+.page-hero .section-tag{color:var(--yellow);background:rgba(255,210,63,0.1);border-color:rgba(255,210,63,0.25);margin-bottom:1rem}
+
+/* ── SERVICES DEEP ── */
+.services-deep{padding:6rem 2rem;background:var(--white)}
+.service-block{margin-bottom:5rem}
+.service-block:last-child{margin-bottom:0}
+.sdivider{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--border)}
+.sdivider-num{font-family:var(--font-head);font-size:3.5rem;font-weight:800;color:rgba(255,210,63,0.2);line-height:1;flex-shrink:0}
+.sdivider-info h3{font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;letter-spacing:-0.01em;color:var(--navy)}
+.sdivider-info h3 span{color:var(--coral)}
+.sdivider-info p{color:var(--muted);font-size:0.85rem;margin-top:0.3rem}
+.sblock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.sblock-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.6rem;transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04);position:relative;overflow:hidden}
+.sblock-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--yellow),var(--coral));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.sblock-card:hover{border-color:rgba(255,90,95,0.2);transform:translateY(-4px);box-shadow:0 14px 36px rgba(255,90,95,0.1)}
+.sblock-card:hover::before{transform:scaleX(1)}
+.sblock-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(255,210,63,0.15),rgba(255,90,95,0.08));display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;color:var(--coral)}
+.sblock-card h4{font-family:var(--font-head);font-weight:700;font-size:0.95rem;margin-bottom:0.4rem;color:var(--navy)}
+.sblock-card p{font-size:0.8rem;color:var(--muted);line-height:1.7}
+.sblock-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
+.stag{font-family:var(--font-mono);font-size:0.6rem;background:rgba(13,27,64,0.05);border:1px solid rgba(13,27,64,0.1);color:var(--navy2);padding:0.2rem 0.6rem;border-radius:100px;letter-spacing:0.04em}
+
+/* ── WHY REASONS ── */
+.why-reasons{padding:6rem 2rem;background:var(--cream)}
+.reasons-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem}
+.reason{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:2.5rem;transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.reason:hover{border-color:var(--yellow);box-shadow:0 12px 36px rgba(255,210,63,0.18);transform:translateY(-4px)}
+.reason-num{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:rgba(255,210,63,0.35);line-height:1;margin-bottom:0.8rem}
+.reason h3{font-family:var(--font-head);font-size:1.2rem;font-weight:800;letter-spacing:-0.01em;margin-bottom:0.6rem;color:var(--navy)}
+.reason h3 span{color:var(--coral)}
+.reason p{font-size:0.85rem;color:var(--muted);line-height:1.75}
+
+/* ── FAQ ── */
+.faq-wrap{padding:6rem 2rem;background:var(--white)}
+.faq-inner{max-width:800px;margin:0 auto}
+.faq-group-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--coral);letter-spacing:0.14em;text-transform:uppercase;margin:2.5rem 0 1rem;display:block;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;color:var(--navy);display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:0.95rem;font-weight:500;transition:color 0.2s;gap:1rem}
+.faq-q:hover{color:var(--coral)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(13,27,64,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;color:var(--muted);transition:all 0.3s}
+.faq-item.open .faq-icon{background:var(--coral);border-color:var(--coral);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.faq-a-inner{padding:0 0 1.4rem;font-size:0.88rem;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-a{max-height:400px}
+
+/* ── CONTACT ── */
+.contact-section{padding:6rem 2rem;background:var(--white)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;max-width:1200px;margin:0 auto;align-items:start}
+.contact-info h3{font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-0.01em;margin-bottom:0.8rem;color:var(--navy)}
+.contact-info h3 span{color:var(--coral)}
+.contact-info p{color:var(--muted);font-size:0.9rem;line-height:1.8;margin-bottom:2rem}
+.contact-detail{display:flex;align-items:flex-start;gap:0.9rem;margin-bottom:1.2rem}
+.cd-icon{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:rgba(255,210,63,0.15);border:1px solid rgba(255,210,63,0.3);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--navy)}
+.cd-label{font-family:var(--font-mono);font-size:0.62rem;color:var(--coral);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.15rem}
+.cd-val{font-size:0.88rem;color:var(--navy)}
+.contact-form{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.06)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem}
+.form-group label{font-family:var(--font-mono);font-size:0.64rem;color:var(--navy);letter-spacing:0.1em;text-transform:uppercase;opacity:0.6}
+.form-group input,.form-group select,.form-group textarea{background:var(--cream);border:1.5px solid var(--border);border-radius:10px;padding:0.8rem 1rem;color:var(--navy);font-family:var(--font-body);font-size:0.88rem;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,90,95,0.08);background:#fff}
+.form-group select option{background:#fff;color:var(--navy)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-submit{width:100%;background:var(--navy);color:var(--yellow);border:none;border-radius:100px;padding:1rem;font-family:var(--font-body);font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.4rem}
+.form-submit:hover{background:var(--coral);color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,90,95,0.3)}
+.form-success{display:none;text-align:center;padding:2.5rem 1.5rem}
+.form-success .check{font-size:2.5rem;margin-bottom:0.8rem;color:var(--coral)}
+.form-success h4{font-family:var(--font-head);font-size:1.6rem;color:var(--coral);margin-bottom:0.4rem}
+.form-success p{color:var(--muted);font-size:0.88rem}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.footer-brand-desc{color:rgba(255,255,255,0.3);font-size:0.82rem;max-width:210px;margin-top:0.7rem;line-height:1.7}
+.footer-col h5{font-family:var(--font-mono);font-size:0.62rem;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-col a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.82rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--yellow)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(255,255,255,0.2)}
+.footer-social{display:flex;gap:0.7rem}
+.fsoc{width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:0.8rem;transition:all 0.2s;text-decoration:none;color:rgba(255,255,255,0.3)}
+.fsoc:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE — TABLET ── */
+@media(max-width:1024px){
+  .hero-container{grid-template-columns:1fr 280px;gap:2.5rem}
+.sblock-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .footer-top{grid-template-columns:1fr 1fr 1fr;gap:2rem}
+  .footer-top>div:first-child{grid-column:1/-1}
+}
+
+/* ── RESPONSIVE — MOBILE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-container{grid-template-columns:1fr}
+  .hero{padding:5rem 1.5rem 4rem;min-height:auto}
+  .hero-stats{flex-direction:row;flex-wrap:wrap;gap:0.8rem}
+  .hstat{flex:1;min-width:140px}
+  .pillar-content.active{grid-template-columns:1fr}
+  .sub-cards{grid-template-columns:1fr 1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .sstat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .reasons-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-top>div:first-child{grid-column:auto}
+  .footer-bottom{flex-direction:column;gap:0.8rem;text-align:center}
+  .services-intro{min-height:auto;padding:5rem 1.5rem}
+  .service-tabs-section,.services-deep,.why-reasons,.trusted,.faq-wrap,.contact-section{padding:4.5rem 1.5rem}
+  .page-hero{padding:7rem 1.5rem 4rem}
+  .nav-inner{padding:0 1.5rem}
+}
+@media(max-width:560px){
+  .hero h1{font-size:2.8rem}
+  .hero-stats{flex-direction:column}
+  .hstat{min-width:auto}
+  .footer-top{grid-template-columns:1fr}
+  .pillars{gap:0.4rem}
+  .pillar-tab{font-size:0.62rem;padding:0.45rem 0.9rem}
+  .top-banner{font-size:0.62rem;letter-spacing:0.08em}
+  .stats-strip{grid-template-columns:1fr 1fr}
+  h2.big{font-size:1.75rem}
+  .sdivider-num{font-size:2.5rem}
+  .sub-cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── BANNER ── -->
+<div class="top-banner" role="banner" aria-label="Site announcement">
+  <span class="banner-dot"></span>
+  <span>Building the Digital Future</span>
+  <span class="banner-dot"></span>
+</div>
+
+<!-- ── NAV ── -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="logo nav-logo" href="javascript:void(0)" onclick="showPage('home')" aria-label="YammTech Home">
+      <img src="logo.png" alt="YammTech" class="logo-img logo-img-nav"/>
+    </a>
+    <ul class="nav-links" role="menubar">
+      <li><a href="javascript:void(0)" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('why')" id="nav-why">Why Choose Us?</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('faq')" id="nav-faq">FAQs</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <button class="mob-close" onclick="closeMobile()" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="javascript:void(0)" onclick="closeMobile();showPage('home')">Home</a>
+  <a href="javascript:void(0)" onclick="closeMobile();showPage('why')">Why Choose Us?</a>
+  <a href="javascript:void(0)" onclick="closeMobile();showPage('faq')">FAQs</a>
+  <a href="javascript:void(0)" onclick="closeMobile();showPage('contact')" class="m-cta">Contact Us</a>
+</div>
+
+
+<!-- ══════════════════════
+     PAGE 1 — HOME
+══════════════════════ -->
+<div class="page active" id="page-home">
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="deco deco1"></div><div class="deco deco2"></div><div class="deco deco3"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-eyebrow"><span class="blink-dot"></span>Your End-to-End Digital Partner</div>
+          <h1 id="hero-heading">BUILD.<br/><span class="stroke">MARKET.</span><br/><span class="yellow">GROW.</span></h1>
+          <p class="hero-sub">YammTech is your full-stack digital partner — delivering custom software, enterprise IT solutions, and full-service digital marketing that drives measurable, real-world growth for businesses everywhere.</p>
+          <div class="hero-actions">
+            <a href="javascript:void(0)" class="btn-yellow" onclick="showPage('contact')">Start a Project &rarr;</a>
+            <a href="javascript:void(0)" class="btn-outline-w" onclick="showPage('why')">Explore Services</a>
+          </div>
+        </div>
+        <aside class="hero-stats" aria-label="Key statistics">
+          <div class="hstat"><div class="hstat-icon y"><i class="fa-solid fa-rocket"></i></div><div><div class="hstat-num">50+</div><div class="hstat-label">Projects Delivered</div></div></div>
+          <div class="hstat"><div class="hstat-icon w"><i class="fa-solid fa-star"></i></div><div><div class="hstat-num">98%</div><div class="hstat-label">Client Satisfaction</div></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Custom Software</span><span class="marquee-item">Google Ads</span><span class="marquee-item">Enterprise Architecture</span><span class="marquee-item">Meta Ads</span><span class="marquee-item">SEO</span><span class="marquee-item">Data Analytics</span><span class="marquee-item">Social Media Marketing</span><span class="marquee-item">Managed IT</span><span class="marquee-item">Email Marketing</span><span class="marquee-item">Custom Software</span><span class="marquee-item">Google Ads</span><span class="marquee-item">Enterprise Architecture</span><span class="marquee-item">Meta Ads</span><span class="marquee-item">SEO</span><span class="marquee-item">Data Analytics</span><span class="marquee-item">Social Media Marketing</span><span class="marquee-item">Managed IT</span><span class="marquee-item">Email Marketing</span>
+      </div>
+    </div>
+
+    <!-- ── SECTION: INTRO ── -->
+    <section class="services-intro" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="services-intro-inner">
+          <div class="section-tag reveal">What We Do</div>
+          <h2 class="big reveal" id="services-heading">Everything your business<br/><span>needs to thrive online</span></h2>
+          <p class="section-desc reveal">From building powerful software to dominating search rankings — we cover every dimension of your digital presence under one roof, so you can focus on what matters most.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION: SERVICE TABS ── -->
+    <section class="service-tabs-section">
+      <div class="container">
+        <div class="pillars reveal" role="tablist">
+          <button class="pillar-tab active" onclick="switchPillar('software',this)" role="tab" aria-selected="true"><i class="fa-solid fa-laptop-code"></i> Software Dev</button>
+          <button class="pillar-tab" onclick="switchPillar('enterprise',this)" role="tab" aria-selected="false"><i class="fa-solid fa-landmark"></i> Enterprise IT</button>
+          <button class="pillar-tab" onclick="switchPillar('data',this)" role="tab" aria-selected="false"><i class="fa-solid fa-chart-column"></i> Data &amp; BI</button>
+          <button class="pillar-tab" onclick="switchPillar('marketing',this)" role="tab" aria-selected="false"><i class="fa-solid fa-bullhorn"></i> Digital Marketing</button>
+          <button class="pillar-tab" onclick="switchPillar('managed',this)" role="tab" aria-selected="false"><i class="fa-solid fa-shield-halved"></i> Managed IT</button>
+        </div>
+        <div class="pillar-content active" id="pillar-software" role="tabpanel">
+          <div class="pillar-intro"><h3>Custom <span>Software</span> Development</h3><p>We design and build web apps, mobile apps, and bespoke platforms tailored to your exact needs — scalable, secure, and built for long-term success.</p><a href="javascript:void(0)" class="btn-yellow" onclick="showPage('why')">Explore Software Services &rarr;</a></div>
+          <div class="sub-cards">
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-globe"></i></span><div class="sc-title">Web Applications</div><div class="sc-desc">Full-stack web apps with React, Node.js, and modern frameworks — fast, responsive, and SEO-ready.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-mobile-screen"></i></span><div class="sc-title">Mobile Apps</div><div class="sc-desc">Native iOS & Android and cross-platform apps with exceptional UX and performance-first engineering.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-plug"></i></span><div class="sc-title">API & Integrations</div><div class="sc-desc">RESTful APIs, third-party integrations, and microservices that connect your entire ecosystem.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-cart-shopping"></i></span><div class="sc-title">E-Commerce</div><div class="sc-desc">Custom online stores built for conversion, speed, and scale — with seamless payment integration.</div></div>
+          </div>
+        </div>
+        <div class="pillar-content" id="pillar-enterprise" role="tabpanel">
+          <div class="pillar-intro"><h3>Enterprise <span>Architecture</span> &amp; IT</h3><p>We design and implement robust IT infrastructures that meet the strictest compliance, security, and scalability requirements — government-grade reliability for every client.</p><a href="javascript:void(0)" class="btn-yellow" onclick="showPage('why')">Explore IT Services &rarr;</a></div>
+          <div class="sub-cards">
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-cloud"></i></span><div class="sc-title">Cloud Architecture</div><div class="sc-desc">AWS, Azure, and GCP design, migration, and optimization for government and enterprise scale.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-lock"></i></span><div class="sc-title">Security & Compliance</div><div class="sc-desc">FISMA/NIST compliance, security audits, and hardened architectures for critical systems.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-helmet-safety"></i></span><div class="sc-title">System Modernization</div><div class="sc-desc">Migrate and modernize legacy systems with zero downtime and complete operational continuity.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-server"></i></span><div class="sc-title">Shared Hosting</div><div class="sc-desc">Multi-tenant government hosting platforms — managed, monitored, and always available.</div></div>
+          </div>
+        </div>
+        <div class="pillar-content" id="pillar-data" role="tabpanel">
+          <div class="pillar-intro"><h3>Data Analytics &amp; <span>Business Intelligence</span></h3><p>Turn raw data into strategic decisions. We build BI dashboards, data pipelines, and reporting platforms that give your team the clarity to act fast and win.</p><a href="javascript:void(0)" class="btn-yellow" onclick="showPage('why')">Explore Data Services &rarr;</a></div>
+          <div class="sub-cards">
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-chart-column"></i></span><div class="sc-title">BI Dashboards</div><div class="sc-desc">Interactive Power BI, Tableau, or custom dashboards surfacing your most critical KPIs.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-rotate"></i></span><div class="sc-title">Data Pipelines</div><div class="sc-desc">ETL processes and real-time streaming pipelines built for reliability, scale, and speed.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-robot"></i></span><div class="sc-title">AI & Predictive Analytics</div><div class="sc-desc">Machine learning models and forecasting engines that turn data into competitive advantage.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-clipboard-list"></i></span><div class="sc-title">Custom Reporting</div><div class="sc-desc">Automated reports delivered to the right stakeholders, at the right time, every time.</div></div>
+          </div>
+        </div>
+        <div class="pillar-content" id="pillar-marketing" role="tabpanel">
+          <div class="pillar-intro"><h3>Full-Service <span>Digital Marketing</span></h3><p>We pair SEO, Google Ads, Meta Ads, and social media with creative strategy to drive qualified leads and measurable revenue growth for your brand.</p><a href="javascript:void(0)" class="btn-yellow" onclick="showPage('why')">Explore Marketing Services &rarr;</a></div>
+          <div class="sub-cards">
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-magnifying-glass"></i></span><div class="sc-title">SEO</div><div class="sc-desc">Technical SEO, content strategy, and link building for lasting organic search rankings.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-bullseye"></i></span><div class="sc-title">Google Ads</div><div class="sc-desc">Search, Shopping, Display & YouTube campaigns managed for maximum ROAS.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-brands fa-meta"></i></span><div class="sc-title">Meta Ads</div><div class="sc-desc">Facebook & Instagram campaigns with precise audience targeting that converts.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-share-nodes"></i></span><div class="sc-title">Social Media</div><div class="sc-desc">Content strategy, community management, and organic growth across all platforms.</div></div>
+          </div>
+        </div>
+        <div class="pillar-content" id="pillar-managed" role="tabpanel">
+          <div class="pillar-intro"><h3>Managed <span>IT Services</span></h3><p>Free your team to focus on the business while we proactively handle your entire IT infrastructure — monitoring, support, backups, and cybersecurity, 24/7.</p><a href="javascript:void(0)" class="btn-yellow" onclick="showPage('why')">Explore Managed IT &rarr;</a></div>
+          <div class="sub-cards">
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-satellite-dish"></i></span><div class="sc-title">Infrastructure Management</div><div class="sc-desc">24/7 monitoring, patching, and optimization of servers, networks, and cloud resources.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-headset"></i></span><div class="sc-title">Helpdesk Support</div><div class="sc-desc">Responsive IT support with clearly defined SLA response times for your whole team.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-floppy-disk"></i></span><div class="sc-title">Backup & Recovery</div><div class="sc-desc">Automated backups and tested disaster recovery plans that guarantee business continuity.</div></div>
+            <div class="sub-card"><span class="sc-icon"><i class="fa-solid fa-shield-halved"></i></span><div class="sc-title">Cybersecurity</div><div class="sc-desc">Endpoint protection, vulnerability scanning, and security training year-round.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="YammTech by the numbers">
+      <div class="sstat reveal"><span class="sstat-n">50+</span><span class="sstat-l">Projects Delivered</span></div>
+      <div class="sstat reveal"><span class="sstat-n">98%</span><span class="sstat-l">Client Satisfaction</span></div>
+      <div class="sstat reveal"><span class="sstat-n">5+</span><span class="sstat-l">Years of Excellence</span></div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="logo footer-logo-link" href="javascript:void(0)" onclick="showPage('home')"><img src="logo.png" alt="YammTech" class="logo-img logo-img-footer"/></a>
+          <p class="footer-brand-desc">Your end-to-end digital partner for software, IT, and marketing. Building the digital future, together.</p>
+        </div>
+        <div class="footer-col"><h5>Software &amp; IT</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Custom Software</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Enterprise Architecture</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Data Analytics</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Managed IT</a></li></ul></div>
+        <div class="footer-col"><h5>Marketing</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">SEO Services</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Google Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Meta Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Social Media</a></li></ul></div>
+        <div class="footer-col"><h5>Company</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Why YammTech?</a></li><li><a href="javascript:void(0)" onclick="showPage('faq')">FAQs</a></li><li><a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a></li><li><a href="mailto:info@yammtech.com">info@yammtech.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 YammTech. All rights reserved.</span><div class="footer-social"><a class="fsoc" href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════
+     PAGE 2 — WHY
+══════════════════════ -->
+<div class="page" id="page-why">
+  <div class="page-hero">
+    <div class="deco deco1"></div><div class="deco deco2"></div>
+    <div class="container">
+      <div class="section-tag">Why Choose YammTech</div>
+      <h1>We don't just deliver —<br/><span>we excel.</span></h1>
+      <p>Every service we offer is engineered to produce measurable results. Here's everything we do, and why businesses choose us over the competition.</p>
+    </div>
+  </div>
+
+  <section class="services-deep">
+    <div class="container">
+      <div class="service-block reveal">
+        <div class="sdivider"><div class="sdivider-num">01</div><div class="sdivider-info"><h3>Custom <span>Software</span> Development</h3><p>Tailored digital products built for performance, scalability, and longevity</p></div></div>
+        <div class="sblock-grid">
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-globe"></i></div><h4>Web Application Development</h4><p>Full-stack web apps with React, Next.js, and Node.js — fast, SEO-optimized, and built for seamless UX across all devices.</p><div class="sblock-tags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">Node.js</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-mobile-screen"></i></div><h4>Mobile App Development</h4><p>Native iOS & Android apps and cross-platform solutions using React Native and Flutter — beautiful, fast, and App Store ready.</p><div class="sblock-tags"><span class="stag">iOS</span><span class="stag">Android</span><span class="stag">Flutter</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-plug"></i></div><h4>API Development &amp; Integration</h4><p>RESTful and GraphQL APIs, third-party integrations, and microservice architectures that make your entire tech stack work in harmony.</p><div class="sblock-tags"><span class="stag">REST</span><span class="stag">GraphQL</span><span class="stag">Webhooks</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-cart-shopping"></i></div><h4>E-Commerce Development</h4><p>Custom stores on Shopify, WooCommerce, or fully bespoke — optimized for conversion, speed, and frictionless checkout.</p><div class="sblock-tags"><span class="stag">Shopify</span><span class="stag">WooCommerce</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-pen-ruler"></i></div><h4>UI/UX Design</h4><p>User research, wireframing, and pixel-perfect design that turns complex workflows into intuitive, delightful experiences that convert.</p><div class="sblock-tags"><span class="stag">Figma</span><span class="stag">Prototyping</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-gears"></i></div><h4>DevOps &amp; CI/CD</h4><p>Automated deployment pipelines, Docker & Kubernetes containerization, and continuous delivery to keep shipping fast and reliably.</p><div class="sblock-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span></div></div>
+        </div>
+      </div>
+      <div class="service-block reveal">
+        <div class="sdivider"><div class="sdivider-num">02</div><div class="sdivider-info"><h3>Enterprise <span>IT Architecture</span></h3><p>Government-grade infrastructure for organizations that demand zero failure tolerance</p></div></div>
+        <div class="sblock-grid">
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-cloud"></i></div><h4>Cloud Architecture &amp; Migration</h4><p>Design and migrate to AWS, Azure, or GCP with zero downtime — optimized for cost, performance, and compliance.</p><div class="sblock-tags"><span class="stag">AWS</span><span class="stag">Azure</span><span class="stag">GCP</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-lock"></i></div><h4>Security &amp; Compliance</h4><p>FISMA, NIST, and FedRAMP compliance. Security audits, penetration testing, and hardened architecture for critical systems.</p><div class="sblock-tags"><span class="stag">FISMA</span><span class="stag">NIST</span><span class="stag">FedRAMP</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-helmet-safety"></i></div><h4>Legacy System Modernization</h4><p>Re-platform outdated systems with strategies that preserve business logic and eliminate technical debt with zero disruption.</p><div class="sblock-tags"><span class="stag">Refactoring</span><span class="stag">Migration</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-server"></i></div><h4>Shared Hosting Platforms</h4><p>We host and manage multi-tenant government platforms through shared infrastructure — always monitored and maintained.</p><div class="sblock-tags"><span class="stag">Gov. Hosting</span><span class="stag">Multi-Tenant</span></div></div>
+        </div>
+      </div>
+      <div class="service-block reveal">
+        <div class="sdivider"><div class="sdivider-num">03</div><div class="sdivider-info"><h3>Full-Service <span>Digital Marketing</span></h3><p>Get found online, earn more clicks, and convert more customers — across every major channel</p></div></div>
+        <div class="sblock-grid">
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h4>Search Engine Optimization (SEO)</h4><p>Technical SEO audits, keyword research, on-page optimization, link building, and Core Web Vitals — engineered for durable organic rankings.</p><div class="sblock-tags"><span class="stag">Technical SEO</span><span class="stag">Content</span><span class="stag">Local SEO</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-bullseye"></i></div><h4>Google Ads &amp; PPC Management</h4><p>Search, Shopping, Display, YouTube, and Performance Max campaigns — built for qualified traffic and maximum return on ad spend.</p><div class="sblock-tags"><span class="stag">Search</span><span class="stag">Shopping</span><span class="stag">YouTube</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-brands fa-meta"></i></div><h4>Meta Ads (Facebook &amp; Instagram)</h4><p>Audience research, creative strategy, retargeting funnels, and lookalike audiences — campaigns that convert cold traffic into loyal customers.</p><div class="sblock-tags"><span class="stag">Facebook</span><span class="stag">Instagram</span><span class="stag">Retargeting</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-share-nodes"></i></div><h4>Social Media Marketing</h4><p>Content calendars, Reels/TikTok video, community management, and LinkedIn B2B outreach across all major platforms.</p><div class="sblock-tags"><span class="stag">LinkedIn</span><span class="stag">TikTok</span><span class="stag">Instagram</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-envelope-open-text"></i></div><h4>Email Marketing &amp; Automation</h4><p>Drip campaigns, welcome sequences, newsletters, and CRM integration — nurture leads and drive repeat revenue on autopilot.</p><div class="sblock-tags"><span class="stag">HubSpot</span><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span></div></div>
+          <div class="sblock-card"><div class="sblock-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Analytics &amp; Conversion Optimization</h4><p>GA4 setup, heatmap analysis, A/B testing, attribution modeling, and monthly ROI dashboards — proving every marketing dollar spent.</p><div class="sblock-tags"><span class="stag">GA4</span><span class="stag">GTM</span><span class="stag">CRO</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-reasons">
+    <div class="container">
+      <div class="section-tag reveal">The YammTech Difference</div>
+      <h2 class="big reveal">Why hundreds of clients <span>choose us</span></h2>
+      <div class="reasons-grid reveal">
+        <div class="reason"><div class="reason-num">01</div><h3>Government-<span>Grade</span> Reliability</h3><p>Trusted by state and federal agencies — if our systems are reliable enough for critical government infrastructure, they are more than sufficient for your business.</p></div>
+        <div class="reason"><div class="reason-num">02</div><h3>One Partner, <span>Everything</span></h3><p>Software, IT, data analytics, and digital marketing — all under one roof. No vendor coordination headaches. One team, one point of contact, complete accountability.</p></div>
+        <div class="reason"><div class="reason-num">03</div><h3>Results You Can <span>Measure</span></h3><p>Every engagement includes clear KPIs, regular reporting, and a firm commitment to measurable ROI. You'll always know exactly what your investment is returning.</p></div>
+        <div class="reason"><div class="reason-num">04</div><h3>Client-First <span>Always</span></h3><p>We start by listening. We take time to deeply understand your goals, constraints, and vision before recommending anything. Your success is the only metric that matters.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a class="logo footer-logo-link" href="javascript:void(0)" onclick="showPage('home')"><img src="logo.png" alt="YammTech" class="logo-img logo-img-footer"/></a><p class="footer-brand-desc">Your end-to-end digital partner for software, IT, and marketing. Building the digital future, together.</p></div>
+        <div class="footer-col"><h5>Software &amp; IT</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Custom Software</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Enterprise Architecture</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Data Analytics</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Managed IT</a></li></ul></div>
+        <div class="footer-col"><h5>Marketing</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">SEO Services</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Google Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Meta Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Social Media</a></li></ul></div>
+        <div class="footer-col"><h5>Company</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Why YammTech?</a></li><li><a href="javascript:void(0)" onclick="showPage('faq')">FAQs</a></li><li><a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a></li><li><a href="mailto:info@yammtech.com">info@yammtech.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 YammTech. All rights reserved.</span><div class="footer-social"><a class="fsoc" href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════
+     PAGE 3 — FAQ
+══════════════════════ -->
+<div class="page" id="page-faq">
+  <div class="page-hero">
+    <div class="deco deco1"></div><div class="deco deco2"></div>
+    <div class="container">
+      <div class="section-tag">FAQs</div>
+      <h1>Got questions?<br/><span>We've got answers.</span></h1>
+      <p>Everything you need to know about working with YammTech — from how we work to what results you can expect.</p>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="faq-inner">
+      <span class="faq-group-label">General</span>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What does YammTech do? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">YammTech is a full-service digital agency combining custom software development, enterprise IT architecture, data analytics, and digital marketing under one roof. We serve both private businesses and government agencies, delivering end-to-end digital solutions that drive measurable growth.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Where is YammTech based and do you work with clients globally? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">YammTech is based in Toronto, Canada, serving clients across North America and internationally. We work with businesses, government agencies, and enterprises — reach out to discuss your specific needs.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I get started with YammTech? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Simply fill out the contact form on our Contact page or email us at info@yammtech.com. We'll schedule a free discovery call to understand your goals, scope, and timeline — then present a tailored proposal at no obligation.</div></div>
+      </div>
+
+      <span class="faq-group-label">Software Development</span>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does it take to build a custom web or mobile app? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Timelines vary by complexity. A standard web application typically takes 8–16 weeks from kickoff to launch. A mobile app ranges from 12–24 weeks depending on platforms and features. We provide a detailed project timeline during the discovery phase so you always know what to expect.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What tech stack do you use? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We're technology-agnostic and select the best stack for each project. Common choices include React, Next.js, and Node.js for web; React Native and Flutter for mobile; AWS, Azure, and GCP for cloud; and PostgreSQL, MongoDB, or MySQL for databases. We document everything so your team can maintain it going forward.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide post-launch support and maintenance? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. All software projects include a 30-day post-launch warranty period at no extra cost. After that, we offer flexible monthly maintenance plans covering security patches, performance monitoring, bug fixes, and feature updates — so your product stays current and secure.</div></div>
+      </div>
+
+      <span class="faq-group-label">Digital Marketing</span>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How soon will I see results from SEO? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">SEO is a long-term investment. Most clients begin seeing measurable organic traffic improvements within 3–6 months, with significant ranking gains at 6–12 months. We set realistic expectations upfront and provide monthly reporting so you can track progress at every stage.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What's the minimum budget for Google Ads or Meta Ads campaigns? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We recommend a minimum ad spend of $1,500/month for Google Ads and $1,000/month for Meta Ads to gather statistically meaningful data and optimize effectively. Our management fees are separate and scale with your ad spend. We'll help you build a budget plan that maximizes ROI from day one.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer one-time projects or only ongoing retainers? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Both. Software development projects are typically scoped as fixed-price or time-and-materials engagements. Digital marketing and managed IT services are offered as monthly retainers because consistent, ongoing effort is what produces compounding results. We're flexible — let's talk about what structure works for you.</div></div>
+      </div>
+
+      <span class="faq-group-label">Enterprise &amp; Government</span>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are you experienced working with government agencies? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — government work is a core part of our business. We have served 10+ state agencies including MVA, DNR, DBM, and the State Comptroller's Office. We understand procurement processes, compliance requirements (FISMA, NIST, FedRAMP), and the unique operational constraints of public-sector IT projects.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What compliance standards do you support? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We design and implement systems compliant with FISMA, NIST 800-53, FedRAMP, HIPAA, SOC 2, and ADA/WCAG accessibility standards. Our security team conducts thorough compliance audits and can assist with ATO (Authority to Operate) documentation for federal engagements.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a class="logo footer-logo-link" href="javascript:void(0)" onclick="showPage('home')"><img src="logo.png" alt="YammTech" class="logo-img logo-img-footer"/></a><p class="footer-brand-desc">Your end-to-end digital partner for software, IT, and marketing. Building the digital future, together.</p></div>
+        <div class="footer-col"><h5>Software &amp; IT</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Custom Software</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Enterprise Architecture</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Data Analytics</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Managed IT</a></li></ul></div>
+        <div class="footer-col"><h5>Marketing</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">SEO Services</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Google Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Meta Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Social Media</a></li></ul></div>
+        <div class="footer-col"><h5>Company</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Why YammTech?</a></li><li><a href="javascript:void(0)" onclick="showPage('faq')">FAQs</a></li><li><a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a></li><li><a href="mailto:info@yammtech.com">info@yammtech.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 YammTech. All rights reserved.</span><div class="footer-social"><a class="fsoc" href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════
+     PAGE 4 — CONTACT
+══════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <div class="deco deco1"></div><div class="deco deco2"></div>
+    <div class="container">
+      <div class="section-tag">Contact Us</div>
+      <h1>Let's build something<br/><span>great together.</span></h1>
+      <p>Tell us about your project and we'll get back to you within one business day with a tailored plan.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <h3>Start the <span>conversation</span></h3>
+        <p>Whether you need a custom software build, a digital marketing strategy, or enterprise IT support — we're ready to help. Fill out the form and our team will reach out within 24 hours.</p>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div><div class="cd-label">Email</div><div class="cd-val">info@yammtech.com</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fa-solid fa-phone"></i></div>
+          <div><div class="cd-label">Phone</div><div class="cd-val">+1 (437) 559-1485</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fa-solid fa-clock"></i></div>
+          <div><div class="cd-label">Response Time</div><div class="cd-val">Within 1 business day</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <div><div class="cd-label">Location</div><div class="cd-val">Toronto, Canada</div></div>
+        </div>
+      </div>
+      <div class="contact-form reveal" id="contactFormWrap">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="fname" placeholder="Jane" required/></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" required/></div>
+          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@company.com" required/></div>
+          <div class="form-group"><label for="company">Company / Organization</label><input type="text" id="company" name="company" placeholder="Acme Corp"/></div>
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Custom Software Development</option>
+              <option>Enterprise IT Architecture</option>
+              <option>Data Analytics &amp; BI</option>
+              <option>SEO Services</option>
+              <option>Google Ads Management</option>
+              <option>Meta Ads Management</option>
+              <option>Social Media Marketing</option>
+              <option>Email Marketing</option>
+              <option>Managed IT Services</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="budget">Approximate Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select a range...</option>
+              <option>Under $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $50,000</option>
+              <option>$50,000 – $150,000</option>
+              <option>$150,000+</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="Describe your goals, timeline, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="form-submit">Send Message &rarr;</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><i class="fa-solid fa-circle-check"></i></div>
+          <h4>Message Sent!</h4>
+          <p>Thank you for reaching out. A member of our team will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a class="logo footer-logo-link" href="javascript:void(0)" onclick="showPage('home')"><img src="logo.png" alt="YammTech" class="logo-img logo-img-footer"/></a><p class="footer-brand-desc">Your end-to-end digital partner for software, IT, and marketing. Building the digital future, together.</p></div>
+        <div class="footer-col"><h5>Software &amp; IT</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Custom Software</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Enterprise Architecture</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Data Analytics</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Managed IT</a></li></ul></div>
+        <div class="footer-col"><h5>Marketing</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">SEO Services</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Google Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Meta Ads</a></li><li><a href="javascript:void(0)" onclick="showPage('why')">Social Media</a></li></ul></div>
+        <div class="footer-col"><h5>Company</h5><ul><li><a href="javascript:void(0)" onclick="showPage('why')">Why YammTech?</a></li><li><a href="javascript:void(0)" onclick="showPage('faq')">FAQs</a></li><li><a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a></li><li><a href="mailto:info@yammtech.com">info@yammtech.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 YammTech. All rights reserved.</span><div class="footer-social"><a class="fsoc" href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="fsoc" href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+
+/* ── PAGE NAVIGATION ── */
+function showPage(id, push=true){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target=document.getElementById('page-'+id);
+  if(target){target.classList.add('active');}
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const navEl=document.getElementById('nav-'+id);
+  if(navEl){navEl.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(()=>observeReveals(),100);
+  if(push){
+    const url = id==='home' ? '/' : '/'+id;
+    history.pushState({page:id}, '', url);
+  }
+  return false;
+}
+
+/* ── MOBILE MENU ── */
+const ham=document.getElementById('hamburger');
+const mob=document.getElementById('mobileMenu');
+function closeMobile(){
+  ham.classList.remove('open');
+  mob.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+}
+ham.addEventListener('click',()=>{
+  const isOpen=mob.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',String(isOpen));
+});
+
+/* ── PILLAR TABS ── */
+function switchPillar(id,btn){
+  document.querySelectorAll('.pillar-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
+  document.querySelectorAll('.pillar-content').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  const panel=document.getElementById('pillar-'+id);
+  if(panel){panel.classList.add('active');}
+}
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen){item.classList.add('open');}
+}
+
+/* ── CONTACT FORM ── */
+function handleFormSubmit(e){
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const btn  = form.querySelector('.form-submit');
+  const orig = btn.innerHTML;
+  btn.innerHTML = 'Sending…';
+  btn.disabled  = true;
+
+  fetch('contact.php', {
+    method:  'POST',
+    body:    new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.innerHTML = 'Error — please try again';
+      btn.disabled  = false;
+    }
+  })
+  .catch(() => {
+    btn.innerHTML = 'Error — please try again';
+    btn.disabled  = false;
+  });
+}
+
+/* ── SCROLL REVEAL ── */
+function observeReveals(){
+  const els=document.querySelectorAll('.page.active .reveal:not(.vis)');
+  if(!els.length)return;
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vis');}});
+  },{threshold:0.12});
+  els.forEach(el=>obs.observe(el));
+}
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  const path = window.location.pathname.replace(/^\//, '') || 'home';
+  const valid = ['home','why','faq','contact'];
+  showPage(valid.includes(path) ? path : 'home', false);
+});
+
+window.addEventListener('popstate', e=>{
+  if(e.state && e.state.page) showPage(e.state.page, false);
+});
+</script>
+</body>
+</html>
