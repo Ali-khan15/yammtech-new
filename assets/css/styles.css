@@ -18,7 +18,7 @@
   --radius:16px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
@@ -690,5 +690,104 @@ footer h5{color:#fff;font-size:14.5px;font-weight:700;margin-bottom:18px}
 
 /* Services page: connected card hover — left accent instead of lift (gap:0 layout) */
 .svc-grid-full .svc:hover{transform:none;border-color:var(--line);box-shadow:inset 4px 0 0 var(--blue),var(--shadow)}
+
+/* ================= PHONE CONTENT CENTERING (≤640px) ================= */
+@media(max-width:640px){
+  /* Hero copy */
+  .hero .wrap>div:first-child{text-align:center}
+  .hero-ctas{justify-content:center}
+  .social-proof{justify-content:center}
+
+  /* Inner page hero bands */
+  .page-hero h1,.page-hero p{text-align:center}
+
+  /* Vertical service cards (home) */
+  .svc:not(.svc-full){align-items:center;text-align:center}
+
+  /* Stats bar items */
+  .stat{justify-content:center;text-align:center}
+
+  /* Handoff gap comparison */
+  .chain-panel{text-align:center}
+  .nodes{justify-content:center}
+
+  /* About page */
+  .about-copy{text-align:center}
+  .about-copy h2{text-align:center}
+  .about-badges{justify-content:center}
+
+  /* Case studies */
+  .cs-head{flex-direction:column;align-items:center;text-align:center}
+  .cs-body{text-align:center}
+  .cs-metric{justify-content:center}
+
+  /* Packages */
+  .pack{text-align:center}
+  .pack li{text-align:left}
+  .packs-note{text-align:center}
+
+  /* Gov quiet bar */
+  .gov-quiet{text-align:center;align-items:center}
+
+  /* Why-us luxury cards */
+  .why-card{align-items:center;text-align:center}
+  .why-proof-tag{align-self:center}
+
+  /* Why-us stats section */
+  .why-stat-box{text-align:center}
+
+  /* Process detail + includes */
+  .proc-detail-card{align-items:center;text-align:center}
+  .proc-output-tag{align-self:center}
+  .proc-incl-card{align-items:center;text-align:center}
+
+  /* Portfolio */
+  .port-content{text-align:center}
+  .port-result-row,.port-tags{justify-content:center}
+  .port-metric-badge{align-self:center}
+
+  /* Contact info rows */
+  .ci-row{flex-direction:column;align-items:center;text-align:center}
+
+  /* Government credentials */
+  .cred{text-align:center}
+  .cred .ic{margin:0 auto 16px}
+
+  /* Footer */
+  .foot-col,.foot-brand,.newsletter{text-align:center}
+  .foot-social{justify-content:center}
+  .foot-bottom{flex-direction:column;align-items:center;text-align:center}
+}
+
+/* Nav: hide audit CTA button on phones where logo + button + hamburger overflow nav width */
+@media(max-width:480px){
+  header .btn-yellow{display:none}
+}
+
+/* ================= PHONE HERO + STATS FIX ================= */
+@media(max-width:640px){
+  /* Tighter hero padding on phone */
+  .hero{padding:44px 0 40px}
+
+  /* h1 scales down smoothly on small screens */
+  h1{font-size:clamp(28px,7vw,38px)}
+
+  /* Lead paragraph: remove desktop max-width cap, slightly smaller */
+  .hero p.lead{max-width:none;font-size:15px;margin:16px 0 24px}
+
+  /* Hero visual — keep visible, fix alignment + containment on phone */
+  .hero-visual{margin-top:32px;border-radius:20px;overflow:hidden;width:100%}
+  .dash-path{display:none}
+  .tablet{border-radius:16px}
+
+  /* Stats bar: vertical icon-above-text layout, compact sizing */
+  .stat{flex-direction:column;gap:10px;align-items:center}
+  .stat-ic{width:50px;height:50px;font-size:17px}
+  .stat .num{font-size:19px;line-height:1.2}
+  .stat .k{font-size:9.5px}
+  .stat .lbl{font-size:11.5px}
+  .stats-inner{padding:28px 20px;gap:20px}
+  .stat + .stat{padding-top:20px}
+}
 
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
